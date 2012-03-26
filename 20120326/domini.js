@@ -40,3 +40,15 @@ var drawCircle = function (r,n){
 	COLOR([1,0,0])(mapped)
 	DRAW(mapped);
 }
+
+var drawCilinder = function (r,h,n,m,color){
+	var domain = DOMAIN([[0,2*PI],[0,h]])([n,m]);
+	var mapping = function (p){
+		var u = p[0];
+		return [r*COS(u),r*SIN(u)];
+	}
+
+	var mapped = MAP(mapping)(domain);
+	COLOR(color)(mapped)
+	DRAW(mapped);
+}
