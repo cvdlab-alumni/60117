@@ -11,7 +11,7 @@ var mapping = function (p){
 	return [u,1];
 }
 var mapped = MAP(mapping)(domain4);
-DRAW(domain4)
+DRAW(mapped)
 
 var domain5 = DOMAIN([[0,10]])([10]);
 var mapping = function (p){
@@ -19,13 +19,13 @@ var mapping = function (p){
 	return [u,u];
 }
 var mapped = MAP(mapping)(domain5);
-DRAW(domain5);
+DRAW(mapped);
 
-var domain6 = DOMAIN([[0,2*PI]])([10]);
+var domain6 = DOMAIN([[0,2*PI]])([120]);
 var mapping = function (p){
 	var u = p[0];
-	return [u,sin[p]];
+	return [u,SIN(u)];
 }
 var mapped = MAP(mapping)(domain6);
-COLOR([1,0,0])(domain6)
-DRAW(domain6);
+COLOR([1,0,0])(mapped)
+DRAW(mapped);
