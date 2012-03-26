@@ -54,7 +54,7 @@ var drawCylinder = function (r,h,n,m,color){
 	DRAW(mapped);
 }
 
-var drawSphere = function (r,h,n,m,color){
+var drawSphere = function (r,n,m,color){
 	var domain = DOMAIN([[0,2*PI],[0,2*PI]])([n,m]);
 	var mapping = function (p){
 		var u = p[0];
