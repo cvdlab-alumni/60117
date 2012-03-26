@@ -20,3 +20,12 @@ var mapping = function (p){
 }
 var mapped = MAP(mapping)(domain5);
 DRAW(domain5);
+
+var domain6 = DOMAIN([[0,2*PI]])([10]);
+var mapping = function (p){
+	var u = p[0];
+	return [u,sin[p]];
+}
+var mapped = MAP(mapping)(domain6);
+COLOR([1,0,0])(domain6)
+DRAW(domain6);
