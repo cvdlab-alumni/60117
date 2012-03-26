@@ -29,3 +29,14 @@ var mapping = function (p){
 var mapped = MAP(mapping)(domain6);
 COLOR([1,0,0])(mapped)
 DRAW(mapped);
+
+var drawCircle = function (r,n){
+	var domain = DOMAIN([[0,2*PI]])([n]);
+	var mapping = function (p){
+		var u = p[0];
+		return [r*COS(u),r*SIN(u)];
+	}
+	var mapped = MAP(mapping)(domain);
+	COLOR([1,0,0])(mapped)
+	DRAW(mapped);
+}
