@@ -66,13 +66,19 @@ var scale = STRUCT([
 	T([0,1])([36 + 21/8,1])(SIMPLEX_GRID([[3/8],[3],[1/8]]))
 ]);
 
+var panchina_centrale = STRUCT([
+	T([0,1,2])([8, 14.28, 1])(SIMPLEX_GRID([REPLICA(8)([0.43,-1.68]),[0.44],[0.40]])),
+	T([0,1,2])([8 - 0.08, 14.28 - 0.08, 1 + 0.40])(SIMPLEX_GRID([[0.08 + 15.2 + 0.08],[0.08 + 0.44 + 0.08],[0.1]]))
+]);
+
 var pavilion = STRUCT([
 	COLOR([1,1,0])(pavimento),
 	COLOR([0,1,1])(piscina_grande),
 	COLOR([0,1,1])(piscina_piccola),
 	COLOR([1,0,0])(pilastri),
 	COLOR([1,0,0])(muro_centrale),
-	COLOR([0,1,0])(scale)
+	COLOR([0,1,0])(scale),
+	COLOR([0,1,0])(panchina_centrale)
 ]);
 
 DRAW(pavilion);
