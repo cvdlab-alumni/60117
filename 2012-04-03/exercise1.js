@@ -10,3 +10,5 @@ DRAW(triangolo);
 
 
 }
+
+start1();
