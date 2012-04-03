@@ -26,16 +26,15 @@ var pavimento = STRUCT([
 	T([0,1])([9,10])(SIMPLEX_GRID([[30],[7],[1]]))
 ]);
 
-//DRAW(S([0,1,2])([.1,.1,.1])(pavimento));
-//DRAW(pavimento);
+var piscina_grande = STRUCT([
+	T([0,1])([1,1])(SIMPLEX_GRID([[20],[9],[0.8]]))
+]);
 
 var pilastro_croce = STRUCT([
 	T([0,1])([-0.1,-0.02])(SIMPLEX_GRID([[0.08],[0.04],[3]])),
 	T([0,1])([-0.02,-0.1])(SIMPLEX_GRID([[0.04],[0.2],[3]])),
 	T([0,1])([0.02,-0.02])(SIMPLEX_GRID([[0.08],[0.04],[3]]))
 ]);
-
-//DRAW(pilastro_croce);
 
 var pilastri = STRUCT([
 	T([0,1,2])([26,7,1])(pilastro_croce),
@@ -48,12 +47,26 @@ var pilastri = STRUCT([
 	T([0,1,2])([45,14,1])(pilastro_croce)
 ]);
 
+var scale = STRUCT([
+	T([0,1])([36,1])(SIMPLEX_GRID([[3/8],[3],[1]])),
+	T([0,1])([36 + 3/8,1])(SIMPLEX_GRID([[3/8],[3],[7/8]])),
+	T([0,1])([36 + 6/8,1])(SIMPLEX_GRID([[3/8],[3],[6/8]])),
+	T([0,1])([36 + 9/8,1])(SIMPLEX_GRID([[3/8],[3],[5/8]])),
+	T([0,1])([36 + 12/8,1])(SIMPLEX_GRID([[3/8],[3],[4/8]])),
+	T([0,1])([36 + 15/8,1])(SIMPLEX_GRID([[3/8],[3],[3/8]])),
+	T([0,1])([36 + 18/8,1])(SIMPLEX_GRID([[3/8],[3],[2/8]])),
+	T([0,1])([36 + 21/8,1])(SIMPLEX_GRID([[3/8],[3],[1/8]]))
+]);
+
 var pavilion = STRUCT([
-	pavimento,
-	pilastri
+	COLOR([1,1,0])(pavimento),
+	COLOR([0,1,1])(piscina_grande),
+	COLOR([1,0,0])(pilastri),
+	COLOR([0,1,0])(scale)
 ]);
 
 DRAW(pavilion);
+//DRAW(S([0,1,2])([.1,.1,.1])(pavilion));
 
 }
 
