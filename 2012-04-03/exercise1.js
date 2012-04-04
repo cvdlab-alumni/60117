@@ -212,16 +212,9 @@ var sovratetti = STRUCT([
 // Interni di sinistra
 
 var interni_sinistra = STRUCT([
-	T([0,1])([4.9,17])(S([0,1,2])([.2,2.1,3])(legno)),
-	T([0,1,2])([4.9,19.1,2])(S([0,1,2])([.2,.8,1])(legno)),
-	T([0,1])([4.9,19.9])(S([0,1,2])([.2,2.1,3])(legno)),
-
-	T([0,1])([5.1,20.6])(S([0,1,2])([.5,.2,3])(legno)),
-	T([0,1,2])([5.1 + .5,20.6,2])(S([0,1,2])([.8,.2,1])(legno)),
-	T([0,1])([5.1 + .5 + .8,20.6])(S([0,1,2])([2.6,.2,3])(legno)),
-
-	T([0,1,2])([6.9,20.8,2])(S([0,1,2])([.2,.8,1])(legno)),
-	T([0,1])([6.9,20.8 + .8])(S([0,1,2])([.2,.4,3])(legno))
+	POLYLINE([[4.9,17],[5.1,17],[5.1,22],[4.9,22],[4.9,17]]),
+	POLYLINE([[5.1,20.6],[9,20.6],[9,20.8],[5.1,20.8],[5.1,20.8]]),
+	POLYLINE([[1,17],[9,17]]),
 ]);
 
 // Interni
@@ -263,9 +256,9 @@ var pavilion = STRUCT([
 	pilastri,
 	mura_in_marmo,
 	mura_in_granito,
-	muro_alabastro,/*
-	interni,
-	panchina_centrale,
+	muro_alabastro,
+	interni,/*
+	panchina_centrale,/*
 	tetti,
 	sovratetti*/
 ]);
