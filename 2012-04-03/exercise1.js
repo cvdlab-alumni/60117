@@ -174,13 +174,13 @@ var muro_alabastro = STRUCT([
 // Tetto di sinistra
 
 var tetto_sinistra = STRUCT([
-	T([0,1])([.4,13.4])(S([0,1,2])([9.2,9.2,.3])(int_bianco))
+	POLYLINE([[0,13],[10,13],[10,23],[0,23],[0,13]]),
 ]);
 
 // Tetto di destra
 
 var tetto_destra = STRUCT([
-	T([0,1])([24,4])(S([0,1,2])([23,13,.3])(int_bianco))
+	POLYLINE([[24,4],[47,4],[47,17],[24,17],[24,2]]),
 ]);
 
 // Tetti
@@ -188,25 +188,6 @@ var tetto_destra = STRUCT([
 var tetti = STRUCT([
 	tetto_sinistra,
 	tetto_destra
-]);
-
-// Sovratetto di sinistra
-
-var sovratetto_sinistra = STRUCT([
-	T([0,1])([.35,13.35])(S([0,1,2])([9.3,9.3,.1])(int_nero))
-]);
-
-// Sovratetto di destra
-
-var sovratetto_destra = STRUCT([
-	T([0,1])([23.95,3.95])(S([0,1,2])([23.1,13.1,.1])(int_nero))
-]);
-
-// Sovratetti
-
-var sovratetti = STRUCT([
-	sovratetto_sinistra,
-	sovratetto_destra
 ]);
 
 // Interni di sinistra
@@ -257,9 +238,8 @@ var pavilion = STRUCT([
 	mura_in_granito,
 	muro_alabastro,
 	interni,
-	panchina_centrale,/*
-	tetti,
-	sovratetti*/
+	panchina_centrale,
+	tetti
 ]);
 
 DRAW(pavilion);
