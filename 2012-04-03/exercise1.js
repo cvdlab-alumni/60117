@@ -1,59 +1,5 @@
 var start = function() {
 
-// Cubo
-
-var cubo = STRUCT([
-	SIMPLEX_GRID([[1],[1],[1]])
-]);
-
-// Marmo
-
-var marmo = STRUCT([
-	cubo
-]);
-
-// Granito
-
-var granito = STRUCT([
-	cubo
-]);
-
-// Alabastro
-
-var alabastro = STRUCT([
-	cubo
-]);
-
-// Legno
-
-var legno = STRUCT([
-	cubo
-]);
-
-// Acqua
-
-var acqua = STRUCT([
-	cubo
-]);
-
-// Acciaio
-
-var acciaio = STRUCT([
-	cubo
-]);
-
-// Intonaco bianco
-
-var int_bianco = STRUCT([
-	cubo
-]);
-
-// Intonaco scuro
-
-var int_nero = STRUCT([
-	cubo
-]);
-
 // Pavimento
 
 var pavimento = STRUCT([
