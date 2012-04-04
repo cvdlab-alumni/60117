@@ -81,9 +81,9 @@ var pilastri = STRUCT([
 	T([0,1,2])([45,14,1])(pilastro_croce)
 ]);
 
-// Muro di sinistra
+// Muro di sinistra marmo
 
-var muro_sinistra = STRUCT([
+var muro_sinistra_marmo = STRUCT([
 	T([0,1,2])([1,.8,1])(SIMPLEX_GRID([[7],[.2],[3]])),
 	T([0,1,2])([.8,.8,1])(SIMPLEX_GRID([[.2],[21.4],[3]])),
 	T([0,1,2])([1,22,1])(SIMPLEX_GRID([[8],[.2],[3]])),
@@ -92,26 +92,44 @@ var muro_sinistra = STRUCT([
 	T([0,1,2])([9,16.8 + 1.8 + 1.8,1])(SIMPLEX_GRID([[.2],[1.8],[3]]))
 ]);
 
-// Muro centrale
+// Muro centrale marmo
 
-var muro_centrale = STRUCT([
+var muro_centrale_marmo = STRUCT([
 	T([0,1,2])([7.5,15,1])(SIMPLEX_GRID([[19],[0.2],[3]]))
 ]);
 
-// Muro di destra
+// Mura in marmo
 
-var muro_destra = STRUCT([
+var mura_in_marmo = STRUCT([
+	muro_sinistra_marmo,
+	muro_centrale_marmo
+]);
+
+// Muro di destra granito
+
+var muro_destra_granito = STRUCT([
 	T([0,1,2])([37.8,16,1])(SIMPLEX_GRID([[13.4],[.2],[3]])),
 	T([0,1,2])([51,5,1])(SIMPLEX_GRID([[.2],[11],[3]])),
 	T([0,1,2])([41.8,4.8,1])(SIMPLEX_GRID([[9.4],[.2],[3]]))
 ]);
 
-// Mura
+// Muro centrale granito
 
-var mura = STRUCT([
-	muro_sinistra,
-	muro_centrale,
-	muro_destra
+var muro_centrale_granito = STRUCT([
+	T([0,1,2])([25.2,7.2,1])(SIMPLEX_GRID([[8.8],[.2],[3]])),
+]);
+
+// Mura in granito
+
+var mura_in_granito = STRUCT([
+	muro_centrale_granito,
+	muro_destra_granito
+]);
+
+// Muro in alabastro
+
+var muro_alabastro = STRUCT([
+	T([0,1,2])([37.2,11.8,1])(SIMPLEX_GRID([[5.3],[.2],[3]])),
 ]);
 
 // Tetto di sinistra
@@ -204,7 +222,9 @@ var pavilion = STRUCT([
 	COLOR([1,1,0])(pavimentazione),
 	COLOR([0,1,1])(piscine),
 	COLOR([.5,.5,.5])(pilastri),
-	COLOR([1,0,0])(mura),
+	COLOR([1,0,0])(mura_in_marmo),
+	COLOR([.5,0,.5])(mura_in_granito),
+	COLOR([.2,.2,.5])(muro_alabastro),
 	COLOR([.8,.52,.25])(interni),
 //	COLOR([0,0,1])(tetti),
 //	COLOR([1,0,1])(sovratetti),
