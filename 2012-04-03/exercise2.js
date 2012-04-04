@@ -323,7 +323,6 @@ var pavilion = STRUCT([
 ]);
 
 DRAW(pavilion);
-//DRAW(S([0,1,2])([.1,.1,.1])(pavilion));
 
 }
 
