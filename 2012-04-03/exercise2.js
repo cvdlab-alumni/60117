@@ -9,49 +9,49 @@ var cubo = STRUCT([
 // Marmo
 
 var marmo = STRUCT([
-	COLOR([.97,.97,.78])(cubo)
+	cubo
 ]);
 
 // Granito
 
 var granito = STRUCT([
-	COLOR([.23,.19,.29])(cubo)
+	cubo
 ]);
 
 // Alabastro
 
 var alabastro = STRUCT([
-	COLOR([.88,.36,.16])(cubo)
+	cubo
 ]);
 
 // Legno
 
 var legno = STRUCT([
-	COLOR([.8,.52,.25])(cubo)
+	cubo
 ]);
 
 // Acqua
 
 var acqua = STRUCT([
-	COLOR([0,1,1])(cubo)
+	cubo
 ]);
 
 // Acciaio
 
 var acciaio = STRUCT([
-	COLOR([.5,.5,.5])(cubo)
+	cubo
 ]);
 
 // Intonaco bianco
 
 var int_bianco = STRUCT([
-	COLOR([1,1,1])(cubo)
+	cubo
 ]);
 
 // Intonaco scuro
 
 var int_nero = STRUCT([
-	COLOR([0,0,0])(cubo)
+	cubo
 ]);
 
 // Pavimento
@@ -297,7 +297,6 @@ var interni_sinistra = STRUCT([
 // Panchina centrale
 
 var panchina_centrale = STRUCT([
-	COLOR([.97,.97,.78]),
 	T([0,1])([8, 14.28])(SIMPLEX_GRID([REPLICA(8)([0.43,-1.68]),[0.44],[0.40]])),
 	T([0,1,2])([8 - 0.08, 14.28 - 0.08, 0.40])(S([0,1,2])([0.08 + 15.2 + 0.08,0.08 + 0.44 + 0.08,.1])(marmo))
 ]);
