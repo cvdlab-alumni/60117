@@ -243,8 +243,7 @@ var interni_sinistra = STRUCT([
 // Panchina centrale
 
 var panchina_centrale = STRUCT([
-	T([0,1])([8, 14.28])(SIMPLEX_GRID([REPLICA(8)([0.43,-1.68]),[0.44],[0.40]])),
-	T([0,1,2])([8 - 0.08, 14.28 - 0.08, 0.40])(S([0,1,2])([0.08 + 15.2 + 0.08,0.08 + 0.44 + 0.08,.1])(marmo))
+	POLYLINE([[7.92,14.2],[7.92 + 15.36, 14.2 ],[7.92 + 15.36, 14.2 + .59],[7.92, 14.2 + .59],[7.92,14.2]]),
 ]);
 
 // Pavilion completo
@@ -257,7 +256,7 @@ var pavilion = STRUCT([
 	mura_in_marmo,
 	mura_in_granito,
 	muro_alabastro,
-	interni,/*
+	interni,
 	panchina_centrale,/*
 	tetti,
 	sovratetti*/
