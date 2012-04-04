@@ -104,21 +104,7 @@ var piscine = STRUCT([
 // Pilasto a croce
 
 var pilastro_croce = STRUCT([
-	S([0,1,2])([.02,.1,3])(acciaio),
-	T([0])([.02]),
-	S([0,1,2])([.08,.02,3])(acciaio),
-	R([2])([PI/2]),
-	S([0,1,2])([.02,.1,3])(acciaio),
-	T([0])([.02]),
-	S([0,1,2])([.08,.02,3])(acciaio),
-	R([2])([PI/2]),
-	S([0,1,2])([.02,.1,3])(acciaio),
-	T([0])([.02]),
-	S([0,1,2])([.08,.02,3])(acciaio),
-	R([2])([PI/2]),
-	S([0,1,2])([.02,.1,3])(acciaio),
-	T([0])([.02]),
-	S([0,1,2])([.08,.02,3])(acciaio)
+	S([0,1])([.02,.02])(POLYLINE([[1,1], [1,5],[-1,5],[-1,1],[-5,1],[-5,-1],[-1,-1],[-1,-5],[1,-5],[1,-1],[5,-1],[5,1],[1,1]])),
 ]);
 
 // Coppia di pilastri a croce
@@ -281,8 +267,8 @@ var panchina_centrale = STRUCT([
 var pavilion = STRUCT([
 	
 	pavimentazione,
-	piscine,/*
-	pilastri,
+	piscine,
+	pilastri/*
 	mura_in_marmo,
 	mura_in_granito,
 	muro_alabastro,
