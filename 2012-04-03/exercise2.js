@@ -14,20 +14,43 @@ var pavimento = STRUCT([
 	T([0,1])([9,10])(SIMPLEX_GRID([[30],[7],[1]])),
 	T([0,1])([.8,2])(SIMPLEX_GRID([[.2],[20.2],[1]])),
 	T([0,1])([1,22])(SIMPLEX_GRID([[8],[.2],[1]])),
-	T([0,1])([9,17])(SIMPLEX_GRID([[.2],[5.2],[1]]))
-	
+	T([0,1])([9,17])(SIMPLEX_GRID([[.2],[5.2],[1]])),
+	T([0,1])([39,16])(SIMPLEX_GRID([[12.2],[.2],[1]])),
+	T([0,1])([51,6])(SIMPLEX_GRID([[.2],[10],[1]])),
+	T([0,1])([1,1])(SIMPLEX_GRID([[20],[9],[0.2]])),
+	T([0,1])([47,5])(SIMPLEX_GRID([[4],[11],[0.2]]))
+]);
+
+// Scale
+
+var scale = STRUCT([
+	T([0,1])([36,1])(SIMPLEX_GRID([[3/8],[3],[1]])),
+	T([0,1])([36 + 3/8,1])(SIMPLEX_GRID([[3/8],[3],[7/8]])),
+	T([0,1])([36 + 6/8,1])(SIMPLEX_GRID([[3/8],[3],[6/8]])),
+	T([0,1])([36 + 9/8,1])(SIMPLEX_GRID([[3/8],[3],[5/8]])),
+	T([0,1])([36 + 12/8,1])(SIMPLEX_GRID([[3/8],[3],[4/8]])),
+	T([0,1])([36 + 15/8,1])(SIMPLEX_GRID([[3/8],[3],[3/8]])),
+	T([0,1])([36 + 18/8,1])(SIMPLEX_GRID([[3/8],[3],[2/8]])),
+	T([0,1])([36 + 21/8,1])(SIMPLEX_GRID([[3/8],[3],[1/8]]))
+]);
+
+// Pavimento e scale
+
+var pavimentazione = STRUCT([
+	pavimento,
+	scale
 ]);
 
 // Piscina Grande
 
 var piscina_grande = STRUCT([
-	T([0,1])([1,1])(SIMPLEX_GRID([[20],[9],[0.8]]))
+	T([0,1,2])([1,1,.2])(SIMPLEX_GRID([[20],[9],[0.6]]))
 ]);
 
 // Piscina piccola
 
 var piscina_piccola = STRUCT([
-	T([0,1])([47,5])(SIMPLEX_GRID([[4],[11],[0.8]]))
+	T([0,1,2])([47,5,.2])(SIMPLEX_GRID([[4],[11],[0.6]]))
 ]);
 
 // Piscine
@@ -58,12 +81,6 @@ var pilastri = STRUCT([
 	T([0,1,2])([45,14,1])(pilastro_croce)
 ]);
 
-// Muro centrale
-
-var muro_centrale = STRUCT([
-	T([0,1,2])([7.5,15,1])(SIMPLEX_GRID([[19],[0.2],[3]]))
-]);
-
 // Muro di sinistra
 
 var muro_sinistra = STRUCT([
@@ -75,11 +92,26 @@ var muro_sinistra = STRUCT([
 	T([0,1,2])([9,16.8 + 1.8 + 1.8,1])(SIMPLEX_GRID([[.2],[1.8],[3]]))
 ]);
 
+// Muro centrale
+
+var muro_centrale = STRUCT([
+	T([0,1,2])([7.5,15,1])(SIMPLEX_GRID([[19],[0.2],[3]]))
+]);
+
+// Muro di destra
+
+var muro_destra = STRUCT([
+	T([0,1,2])([37.8,16,1])(SIMPLEX_GRID([[13.4],[.2],[3]])),
+	T([0,1,2])([51,5,1])(SIMPLEX_GRID([[.2],[11],[3]])),
+	T([0,1,2])([41.8,4.8,1])(SIMPLEX_GRID([[9.4],[.2],[3]]))
+]);
+
 // Mura
 
 var mura = STRUCT([
 	muro_sinistra,
-	muro_centrale
+	muro_centrale,
+	muro_destra
 ]);
 
 // Tetto di sinistra
@@ -158,19 +190,6 @@ var interni_sinistra = STRUCT([
 */
 // Vetrate
 
-// Scale
-
-var scale = STRUCT([
-	T([0,1])([36,1])(SIMPLEX_GRID([[3/8],[3],[1]])),
-	T([0,1])([36 + 3/8,1])(SIMPLEX_GRID([[3/8],[3],[7/8]])),
-	T([0,1])([36 + 6/8,1])(SIMPLEX_GRID([[3/8],[3],[6/8]])),
-	T([0,1])([36 + 9/8,1])(SIMPLEX_GRID([[3/8],[3],[5/8]])),
-	T([0,1])([36 + 12/8,1])(SIMPLEX_GRID([[3/8],[3],[4/8]])),
-	T([0,1])([36 + 15/8,1])(SIMPLEX_GRID([[3/8],[3],[3/8]])),
-	T([0,1])([36 + 18/8,1])(SIMPLEX_GRID([[3/8],[3],[2/8]])),
-	T([0,1])([36 + 21/8,1])(SIMPLEX_GRID([[3/8],[3],[1/8]]))
-]);
-
 // Panchina centrale
 
 var panchina_centrale = STRUCT([
@@ -182,14 +201,13 @@ var panchina_centrale = STRUCT([
 
 var pavilion = STRUCT([
 	
-	COLOR([1,1,0])(pavimento),
+	COLOR([1,1,0])(pavimentazione),
 	COLOR([0,1,1])(piscine),
 	COLOR([.5,.5,.5])(pilastri),
 	COLOR([1,0,0])(mura),
 	COLOR([.8,.52,.25])(interni),
-	COLOR([0,0,1])(tetti),
-	COLOR([1,0,1])(sovratetti),
-	COLOR([0,1,0])(scale),
+//	COLOR([0,0,1])(tetti),
+//	COLOR([1,0,1])(sovratetti),
 	COLOR([0,1,0])(panchina_centrale)
 ]);
 
