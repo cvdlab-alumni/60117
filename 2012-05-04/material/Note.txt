@@ -1,0 +1,6 @@
+DIMENSIONS
+    Wingspan	8.1 m	
+    Length	5.9 m	
+    Height	2.9 m	
+    Wing area	23.6 m2	
+
