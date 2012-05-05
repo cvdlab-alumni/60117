@@ -28,38 +28,33 @@ var grigliayz_ruotata = R([0,2])(-PI/2)(grigliayz);
 
 // Ali
 
-var dom1D = INTERVALS(1)(30);
-var dom2D = DOMAIN([[0,1],[0,1]])([15,30]);
+var ali_dom1D = INTERVALS(1)(30);
+var ali_dom2D = DOMAIN([[0,1],[0,1]])([15,30]);
 
-var c0 = [[0,0.6,0],[6,2.1,0],[12,3.5,0],[18,4.2,0],[24,4.8,0],[30,4.2,0],[34,3,0],[35,2.6,0],[36,2,0],[37,1.5,0],[38,1,0],[37,1.5,0],[36,2,0],[34,2.4,0],[30,3,0],[24,3,0],[18,3,0],[12,2.5,0],[6,1.5,0],[0,0.6,0]];
-var d1 = c0.map(function (p) {return [p[0], p[1], p[2]-6*36/7.5]});
-var s1 = c0.map(function (p) {return [p[0], p[1], p[2]+6*36/7.5]});
-var d2 = c0.map(function (p) {return [p[0], p[1]+0.5*36/7.5, p[2]-12*36/7.5]});
-var s2 = c0.map(function (p) {return [p[0], p[1]+0.5*36/7.5, p[2]+12*36/7.5]});
-var d3 = c0.map(function (p) {return [p[0], p[1]+1*36/7.5, p[2]-18*36/7.5]});
-var s3 = c0.map(function (p) {return [p[0], p[1]+1*36/7.5, p[2]+18*36/7.5]});
+var ali_cp_c0 = [[0,0.6,0],[6,2.1,0],[12,3.5,0],[18,4.2,0],[24,4.8,0],[30,4.2,0],[34,3,0],[35,2.6,0],[36,2,0],[37,1.5,0],[38,1,0],[37,1.5,0],[36,2,0],[34,2.4,0],[30,3,0],[24,3,0],[18,3,0],[12,2.5,0],[6,1.5,0],[0,0.6,0]];
+var ali_cp_d1 = ali_cp_c0.map(function (p) {return [p[0], p[1], p[2]-6*36/7.5]});
+var ali_cp_s1 = ali_cp_c0.map(function (p) {return [p[0], p[1], p[2]+6*36/7.5]});
+var ali_cp_d2 = ali_cp_c0.map(function (p) {return [p[0], p[1]+0.5*36/7.5, p[2]-12*36/7.5]});
+var ali_cp_s2 = ali_cp_c0.map(function (p) {return [p[0], p[1]+0.5*36/7.5, p[2]+12*36/7.5]});
+var ali_cp_d3 = ali_cp_c0.map(function (p) {return [p[0], p[1]+1*36/7.5, p[2]-18*36/7.5]});
+var ali_cp_s3 = ali_cp_c0.map(function (p) {return [p[0], p[1]+1*36/7.5, p[2]+18*36/7.5]});
+var ali_cpmodel = STRUCT(AA(POLYPOINT)([ali_cp_c0,ali_cp_d1,ali_cp_s1,ali_cp_d2,ali_cp_s2,ali_cp_d3,ali_cp_s3]));
 
-var curvesPoints = STRUCT(AA(POLYPOINT)([c0,d1,s1,d2,s2,d3,s3]));
-//DRAW(curvesPoints);
+var ali_cc = AA(BEZIER(S0))([ali_cp_d3,ali_cp_d2,ali_cp_d1,ali_cp_c0,ali_cp_s1,ali_cp_s2,ali_cp_s3]);
+var ali_ccmodel = STRUCT(CONS(AA(MAP)(ali_cc))(ali_dom1D));
 
-var controls = AA(BEZIER(S0))([d3,d2,d1,c0,s1,s2,s3]);
-
-var curves = STRUCT(CONS(AA(MAP)(controls))(dom1D));
-
-//DRAW(curves);
-
-var wing = BEZIER(S1)(controls);
-var surf = MAP(wing)(dom2D);
-//DRAW(surf);
-
-var profilo_inscala = S([0,1,2])([7.5/36,7.5/36,7.5/36])(surf);
-var ala = R([0,2])(-PI/2)(profilo_inscala);
-var ali = STRUCT([T([1])([4]),ala,T([1,2])([-6,-2.5]),ala]);
-
-DRAW(ali);
+var ali_sup = BEZIER(S1)(ali_cc);
+var ali_model = MAP(ali_sup)(ali_dom2D);
 
 // Disegno
 
 DRAW(grigliaxy);
 DRAW(grigliaxz_ruotata);
 DRAW(grigliayz_ruotata);
+
+var ali_model_S_R = R([0,2])(-PI/2)(S([0,1,2])([7.5/36,7.5/36,7.5/36])(ali_model));
+
+var ali = STRUCT([T([1])([4]),ali_model_S_R,T([1,2])([-6,-2.5]),ali_model_S_R]);
+
+DRAW(ali);
+

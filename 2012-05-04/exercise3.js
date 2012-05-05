@@ -26,7 +26,7 @@ var grigliaxz_ruotata = R([1,2])(PI/2)(grigliaxz);
 var grigliayz = COLOR([1,0,0,.5])(griglia(-20,-8,10,6,30,14));
 var grigliayz_ruotata = R([0,2])(-PI/2)(grigliayz);
 
-// Ali
+// Stabilizzatori
 
 var dom1D = INTERVALS(1)(30);
 var dom2D = DOMAIN([[0,1],[0,1]])([15,30]);
