@@ -1,3 +1,6 @@
+
+// Griglia di riferimento
+
 var griglia = function (x1,y1,x2,y2,nx,ny) {
   var lineex= STRUCT(
         REPLICA(nx+1)(
@@ -19,6 +22,7 @@ DRAW(grigliaxy);
 DRAW(R([1,2])(PI/2)(grigliaxz));
 DRAW(R([0,2])(-PI/2)(grigliayz));
 
+// Ali
 
 var dom1D = INTERVALS(1)(30);
 var dom2D = DOMAIN([[0,1],[0,1]])([15,30]);
@@ -49,9 +53,78 @@ var wing = BEZIER(S1)(controls);
 var surf = MAP(wing)(dom2D);
 //DRAW(surf);
 
-
 var profilo_inscala = S([0,1,2])([7.5/36,7.5/36,7.5/36])(surf);
 var ala = R([0,2])(-PI/2)(profilo_inscala);
 var ali = STRUCT([T([1])([4]),ala,T([1,2])([-6,-2.5]),ala]);
 
 DRAW(ali);
+
+// Airstrip
+
+var pista_bianca = STRUCT([
+  COLOR([1,1,1])(SIMPLEX_GRID([[1],[1],[1]]))
+]);
+
+var pista_cemento = STRUCT([
+  COLOR([0.5,0.5,0.5])(SIMPLEX_GRID([[1],[1],[1]]))
+]);
+
+var airstrip = STRUCT([
+  T([1])([-9]),
+  T([0,2])([-43,-76]),
+  S([0,2])([20,152])(pista_cemento),
+  T([0])([20]),
+  S([0,2])([2,152])(pista_bianca),
+  T([0])([2]),
+  S([0,2])([20,152])(pista_cemento),
+  T([0])([20]),
+  S([0,2])([2,8])(pista_bianca),
+
+  T([2])([8]),
+  S([0,2])([2,8])(pista_cemento),
+  T([2])([8]),
+  S([0,2])([2,8])(pista_bianca),
+  T([2])([8]),
+  S([0,2])([2,8])(pista_cemento),
+  T([2])([8]),
+  S([0,2])([2,8])(pista_bianca),
+  T([2])([8]),
+  S([0,2])([2,8])(pista_cemento),
+  T([2])([8]),
+  S([0,2])([2,8])(pista_bianca),
+  T([2])([8]),
+  S([0,2])([2,8])(pista_cemento),
+  T([2])([8]),
+  S([0,2])([2,8])(pista_bianca),
+  T([2])([8]),
+  S([0,2])([2,8])(pista_cemento),
+  T([2])([8]),
+  S([0,2])([2,8])(pista_bianca),
+  T([2])([8]),
+  S([0,2])([2,8])(pista_cemento),
+  T([2])([8]),
+  S([0,2])([2,8])(pista_bianca),
+  T([2])([8]),
+  S([0,2])([2,8])(pista_cemento),
+  T([2])([8]),
+  S([0,2])([2,8])(pista_bianca),
+  T([2])([8]),
+  S([0,2])([2,8])(pista_cemento),
+  T([2])([8]),
+  S([0,2])([2,8])(pista_bianca),
+  T([2])([8]),
+  S([0,2])([2,8])(pista_cemento),
+  T([2])([8]),
+  S([0,2])([2,8])(pista_bianca),
+
+  T([2])([-144]),
+  T([0])([2]),
+  S([0,2])([20,152])(pista_cemento),
+  T([0])([20]),
+  S([0,2])([2,152])(pista_bianca),
+  T([0])([2]),
+  S([0,2])([20,152])(pista_cemento)
+]);
+
+DRAW(airstrip);
+
