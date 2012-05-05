@@ -105,6 +105,57 @@ var stab = NUBS(S1)(2)([0,0,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,15,15])([
   [-28,0,17]
   ]);
 
+// Fusoliera
+
+var fus_dom1D = INTERVALS(1)(60);
+var fus_dom2D = DOMAIN([[0,1],[0,1]])([60,60]);
+
+var fus_or_cc_1 = CUBIC_HERMITE(S0)([[0.6,0,0],[-0.6,0,0],[0,8/3,0],[0,-8/3,0]]);
+var fus_or_cc_2 = CUBIC_HERMITE(S0)([[-0.6,0,0],[0.6,0,0],[0,-8/3,0],[0,8/3,0]]);
+
+var fus_or_cc_3 = CUBIC_HERMITE(S0)([[1,0,0],[-1,0,0],[0,4,0],[0,-4,0]]);
+var fus_or_cc_4 = CUBIC_HERMITE(S0)([[-1,0,0],[1,0,0],[0,-4,0],[0,4,0]]);
+
+var fus_or_cc_5 = CUBIC_HERMITE(S0)([[1,0,-2],[-1,0,-2],[0,4,0],[0,-4,0]]);
+var fus_or_cc_6 = CUBIC_HERMITE(S0)([[-1,0,-2],[1,0,-2],[0,-4,0],[0,4,0]]);
+
+var fus_or_cc_7 = CUBIC_HERMITE(S0)([[1,0,-4],[-1,0,-4],[0,4,0],[0,-4,0]]);
+var fus_or_cc_8 = CUBIC_HERMITE(S0)([[-1,0,-4],[1,0,-4],[0,-4,0],[0,4,0]]);
+
+var fus_or_cc_9 = NUBS(S0)(2)([0,0,0,1,2,2,2])([[.7,0,-6],[.7,.7,-6],[-.7,.7,-6],[-.7,0,-6]]);
+var fus_or_cc_10 = NUBS(S0)(2)([0,0,0,1,2,2,2])([[-.7,0,-6],[-.7,-.7,-6],[.7,-.7,-6],[.7,0,-6]]);
+
+DRAW(MAP(fus_or_cc_1)(fus_dom1D));
+DRAW(MAP(fus_or_cc_2)(fus_dom1D));
+DRAW(MAP(fus_or_cc_3)(fus_dom1D));
+DRAW(MAP(fus_or_cc_4)(fus_dom1D));
+DRAW(MAP(fus_or_cc_5)(fus_dom1D));
+DRAW(MAP(fus_or_cc_6)(fus_dom1D));
+DRAW(MAP(fus_or_cc_7)(fus_dom1D));
+DRAW(MAP(fus_or_cc_8)(fus_dom1D));
+DRAW(MAP(fus_or_cc_9)(fus_dom1D));
+DRAW(MAP(fus_or_cc_10)(fus_dom1D));
+
+var sur5 = NUBS(S1)(2)([0,0,0,1,2,3,3,3])([
+  fus_or_cc_1,
+  fus_or_cc_3,
+  fus_or_cc_5,
+  fus_or_cc_7,
+  fus_or_cc_9
+  ]);
+
+var sur6 = NUBS(S1)(2)([0,0,0,1,2,3,3,3])([
+  fus_or_cc_2,
+  fus_or_cc_4,
+  fus_or_cc_6,
+  fus_or_cc_8,
+  fus_or_cc_10
+  ]);
+
+var fus_up = MAP(sur5)(fus_dom2D);
+var fus_dw = MAP(sur6)(fus_dom2D);
+var fusoliera = STRUCT([fus_up, fus_dw]);
+
 // Disegno
 
 DRAW(grigliaxy);
@@ -117,6 +168,7 @@ var ali = STRUCT([T([1])([4]),ali_model_S_R,T([1,2])([-6,-2.5]),ali_model_S_R]);
 
 DRAW(ali);
 
-
 //DRAW(MAP(stab)(stab_dom2D));
 
+var fusoliera_S = S([0,1,2])([2,2,2])(fusoliera);
+DRAW(T([2])([9])(fusoliera_S));
