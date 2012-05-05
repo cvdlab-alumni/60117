@@ -105,6 +105,8 @@ var stab = NUBS(S1)(2)([0,0,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,15,15])([
   [-28,0,17]
   ]);
 
+var stabilizzatore = MAP(stab)(stab_dom2D);
+
 // Fusoliera
 
 var fus_dom1D = INTERVALS(1)(60);
@@ -168,7 +170,7 @@ var ali = STRUCT([T([1])([4]),ali_model_S_R,T([1,2])([-6,-2.5]),ali_model_S_R]);
 
 DRAW(ali);
 
-//DRAW(MAP(stab)(stab_dom2D));
+DRAW(T([2])([-20])(S([0,1,2])([.25,.25,.25])(stabilizzatore)));
 
 var fusoliera_S = S([0,1,2])([2,2,2])(fusoliera);
 DRAW(T([2])([9])(fusoliera_S));
