@@ -1,25 +1,3 @@
-/*var griglia = function (x1,y1,x2,y2,nx,ny) {
-  var lineex= STRUCT(
-        REPLICA(nx+1)(
-          [POLYLINE([[x1,y1],[x1,y2]]),T([0])([(x2-x1)/nx])]
-        )
-      );
-  var lineey = STRUCT(
-        REPLICA(ny+1)(
-          [POLYLINE([[x1,y1],[x2,y1]]),T([1])([(y2-y1)/ny])]
-        )
-      );
-  return STRUCT([lineex, lineey]);
-}
-
-var grigliaxy = COLOR([0,0,1,.5])(griglia(-20,-8,20,6,40,14));
-var grigliaxz = COLOR([0,1,0,.5])(griglia(-20,-20,20,10,40,30));
-var grigliayz = COLOR([1,0,0,.5])(griglia(-20,-8,10,6,30,14));
-DRAW(grigliaxy);
-DRAW(R([1,2])(PI/2)(grigliaxz));
-DRAW(R([0,2])(-PI/2)(grigliayz));
-*/
-
 var dom1D = INTERVALS(1)(30);
 var dom2D = DOMAIN([[0,1],[0,1]])([15,30]);
 
@@ -48,9 +26,3 @@ DRAW(curves);
 var wing = BEZIER(S1)(controls);
 var surf = MAP(wing)(dom2D);
 DRAW(surf);
-
-
-//var profilo_inscala = S([0,1])([7.5/36,7.5/36])(profilo);
-//var profilo_ruotato = R([0,2])(-PI/2)(profilo_inscala);
-
-//DRAW(profilo_ruotato);
