@@ -19,7 +19,6 @@ var pedone_surface = AA(ROTATIONAL_SURFACE)(pedone_profilo);
 var pedone_surface_model = STRUCT(CONS(AA(MAP)(pedone_surface))(DOMAIN([[0,1],[0,2*PI]])([10,40])));
 
 var pedone = S([0,1,2])([0.25/17.5,0.25/17.5,0.25/17.5])(pedone_surface_model);
-
 var filaDiPedoni = STRUCT(REPLICA(8)([pedone,T([0])([1])]));
 
 // Disegno
