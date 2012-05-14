@@ -76,63 +76,6 @@ var sur6 = NUBS(S1)(2)([0,0,0,1,2,3,3,3])([
 DRAW(MAP(sur5)(fus_dom2D));
 DRAW(MAP(sur6)(fus_dom2D));
 
-/*
-
-var fus_or_cc_s7 = CUBUC_HERMITE(S0)([0,0,0,1,2,3,4,5,6,7,7,7])(fus_or_cp_s7);
-var fus_or_cc_s6 = NUBS(S0)(2)([0,0,0,1,2,3,4,5,6,7,7,7])(fus_or_cp_s6);
-var fus_or_cc_s5 = NUBS(S0)(2)([0,0,0,1,2,3,4,5,6,7,7,7])(fus_or_cp_s5);
-var fus_or_cc_s4 = NUBS(S0)(2)([0,0,0,1,2,3,4,5,6,7,7,7])(fus_or_cp_s4);
-var fus_or_cc_s3 = NUBS(S0)(2)([0,0,0,1,2,3,4,5,6,7,7,7])(fus_or_cp_s3);
-var fus_or_cc_s2 = NUBS(S0)(2)([0,0,0,1,2,3,4,5,6,7,7,7])(fus_or_cp_s2);
-var fus_or_cc_s1 = NUBS(S0)(2)([0,0,0,1,2,3,4,5,6,7,7,7])(fus_or_cp_s1);
-var fus_or_cc_c0 = NUBS(S0)(2)([0,0,0,1,2,3,4,5,6,7,7,7])(fus_or_cp_c0);
-var fus_or_cc_d1 = NUBS(S0)(2)([0,0,0,1,2,3,4,5,6,7,7,7])(fus_or_cp_d1);
-var fus_or_cc_d2 = NUBS(S0)(2)([0,0,0,1,2,3,4,5,6,7,7,7])(fus_or_cp_d2);
-var fus_or_cc_d3 = NUBS(S0)(2)([0,0,0,1,2,3,4,5,6,7,7,7])(fus_or_cp_d3);
-var fus_or_cc_d4 = NUBS(S0)(2)([0,0,0,1,2,3,4,5,6,7,7,7])(fus_or_cp_d4);
-var fus_or_cc_d5 = NUBS(S0)(2)([0,0,0,1,2,3,4,5,6,7,7,7])(fus_or_cp_d5);
-var fus_or_cc_d6 = NUBS(S0)(2)([0,0,0,1,2,3,4,5,6,7,7,7])(fus_or_cp_d6);
-var fus_or_cc_d7 = NUBS(S0)(2)([0,0,0,1,2,3,4,5,6,7,7,7])(fus_or_cp_d7);
-
-DRAW(MAP(fus_or_cc_s7)(fus_dom1D));
-DRAW(MAP(fus_or_cc_s6)(fus_dom1D));
-DRAW(MAP(fus_or_cc_s5)(fus_dom1D));
-DRAW(MAP(fus_or_cc_s4)(fus_dom1D));
-DRAW(MAP(fus_or_cc_s3)(fus_dom1D));
-DRAW(MAP(fus_or_cc_s2)(fus_dom1D));
-DRAW(MAP(fus_or_cc_s1)(fus_dom1D));
-DRAW(MAP(fus_or_cc_c0)(fus_dom1D));
-DRAW(MAP(fus_or_cc_d1)(fus_dom1D));
-DRAW(MAP(fus_or_cc_d2)(fus_dom1D));
-DRAW(MAP(fus_or_cc_d3)(fus_dom1D));
-DRAW(MAP(fus_or_cc_d4)(fus_dom1D));
-DRAW(MAP(fus_or_cc_d5)(fus_dom1D));
-DRAW(MAP(fus_or_cc_d6)(fus_dom1D));
-DRAW(MAP(fus_or_cc_d7)(fus_dom1D));
-
-var stab = NUBS(S1)(2)([0,0,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,15,15])([
-  [28,0,17],
-  fus_or_cc_s7,
-  fus_or_cc_s6,
-  fus_or_cc_s5,
-  fus_or_cc_s4,
-  fus_or_cc_s3,
-  fus_or_cc_s2,
-  fus_or_cc_s1,
-  fus_or_cc_c0,
-  fus_or_cc_d1,
-  fus_or_cc_d2,
-  fus_or_cc_d3,
-  fus_or_cc_d4,
-  fus_or_cc_d5,
-  fus_or_cc_d6,
-  fus_or_cc_d7,
-  [-28,0,17]
-  ]);
-
-DRAW(MAP(stab)(fus_dom2D));
-*/
-
 // Disegno
 
 DRAW(grigliaxy);
