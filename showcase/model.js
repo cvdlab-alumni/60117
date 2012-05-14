@@ -8,7 +8,7 @@ var filaDiCaselle = STRUCT(REPLICA(4)([casella,T([0])([2])]));
 var quadranteDiCaselle = STRUCT(REPLICA(4)([filaDiCaselle,T([1])([2])]));
 
 var caselleCelesti = COLOR([0,1,1,1])(STRUCT([quadranteDiCaselle,T([0,1])([1,1]),quadranteDiCaselle]));
-var caselleBianche = COLOR([1,1,1,1])(STRUCT([T([0,1])([1,0]),quadranteDiCaselle,T([0,1])([-1,1]),quadranteDiCaselle]));
+var caselleBianche = COLOR([1,1,0,1])(STRUCT([T([0,1])([1,0]),quadranteDiCaselle,T([0,1])([-1,1]),quadranteDiCaselle]));
 
 var scacchiera = STRUCT([T([0,1,2])([-.5,-.5,-.2]),caselleCelesti,caselleBianche]);
 
@@ -66,4 +66,4 @@ DRAW(scacchiera);
 
 DRAW(STRUCT([T([1])([1]), COLOR([1,0,0,1])(filaDiPedoni)]));
 
-DRAW(STRUCT([T([6])([1]), COLOR([0,0,0,1])(filaDiPedoni)]));
+DRAW(STRUCT([T([1])([6]), COLOR([0,1,0,1])(filaDiPedoni)]));
