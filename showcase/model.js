@@ -60,6 +60,7 @@ var pedone = S([0,1,2])([0.25/17.5,0.25/17.5,0.25/17.5])(pedone_assembly);
 
 var filaDiPedoni = STRUCT(REPLICA(8)([pedone,T([0])([1])]));
 
+
 // Disegno
 
 DRAW(scacchiera);
